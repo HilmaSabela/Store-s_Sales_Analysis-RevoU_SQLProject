@@ -28,7 +28,7 @@ WHERE city = 'Depok' and gender = 'Female'
 GROUP BY email
 ```
 Result:
-![alt text](Result1.jpg)
+![alt text](Result1.JPG)
 
 2. Provide 10 customer IDs with the largest total overall purchases.
 - Here is the SQL code for the answer
