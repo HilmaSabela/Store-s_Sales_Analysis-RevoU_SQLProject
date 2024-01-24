@@ -107,8 +107,8 @@ The problem encountered was some errors when running the following program in qu
 SUM(total)
 ```
 errors : 
-"Arithmetic overflow error for data type tinyint, value = 74251"
-"Arithmetic overflow error converting expression to data type int"
+- "Arithmetic overflow error for data type tinyint, value = 74251"
+- "Arithmetic overflow error converting expression to data type int"
 
 After finding out by looking at the data type
 ```sql
@@ -118,13 +118,12 @@ COLUMN_NAME,
 DATA_TYPE
 FROM INFORMATION_SCHEMA.COLUMNS
 ```
-- ![alt text](DataType.JPG)
-  
 In the "total" column in the transactions table, the data type is "int", so to eliminate errors this is done by changing the data type to "bigint"
 ```sql
 ALTER TABLE transactions
 ALTER COLUMN total bigint
 ```
+- ![alt text](DataType.JPG)
 
 ## Tableau Analysis
 The analysis can be seen in the link below:
