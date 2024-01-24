@@ -127,5 +127,6 @@ ALTER COLUMN total bigint
 
 ## Tableau Analysis
 The analysis can be seen in the link below:
-- [Store's Sales Analysis Dashboar](https://www.example.com)
+- [Store's Sales Analysis Dashboard](https://public.tableau.com/app/profile/hilma.sabela/viz/TheStoresAnalysisDashboard-RevoUSQLProjectinTableau/Dashboard1)
+  - ![alt text](tableau.JPG)
 
