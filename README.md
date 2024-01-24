@@ -31,7 +31,6 @@ Result:
 ![alt text](Result1.JPG)
 
 2. Provide 10 customer IDs with the largest total overall purchases.
-- Here is the SQL code for the answer
 ```sql
 SELECT TOP(10) 
 customer_id, SUM(total) as total
@@ -39,15 +38,17 @@ FROM transactions
 GROUP by customer_id
 ORDER by total DESC
 ```
+Result:
+![alt text](Result2.JPG)
 3. How many products are there in the database that cost less than 1000?
-- Here is the SQL code for the answer
 ```sql
 SELECT id, price
 FROM product
 WHERE price < 1000
 ```
+Result:
+![alt text](Result3.JPG)
 4. Provide a list of the 5 most purchased product_ids
-- Here is the SQL code for the answer
 ```sql
 SELECT TOP 5
 product_id, 
@@ -56,8 +57,9 @@ FROM transactions
 GROUP BY product_id
 ORDER BY total_quantity DESC
 ```
+Result:
+![alt text](Result4.JPG)
 5. What are the number of transactions, revenue, and number of products sold on the platform monthly? Are the results increasing or not?
-- Here is the SQL code for the answer
 ```sql
 SELECT DATEPART(Month, created_at) Month,
 COUNT(DISTINCT id) AS total_transactions, 
@@ -67,8 +69,9 @@ FROM transactions
 GROUP BY DATEPART(Month, created_at)
 ORDER BY DATEPART(Month, created_at) ASC
 ```
+Result:
+![alt text](Result5.JPG)
 6. Provide information on total spending and average spending from customers per city?
-- Here is the SQL code for the answer
 ```sql
 SELECT cus.city,
 SUM(tra.total) as sum_total,
@@ -78,8 +81,9 @@ LEFT JOIN customer as cus
 	ON cus.id = tra.customer_id
 GROUP BY cus.city
 ```
+Result:
+![alt text](Result6.JPG)
 7. How many customers have a total expenditure of more than > 200,000? Please group them by store type
-- Here is the SQL code for the answer
 ```sql
 SELECT sto.type,
 COUNT(DISTINCT tra.customer_id) AS total_customers
@@ -89,7 +93,8 @@ LEFT JOIN dbo.store AS sto
 GROUP BY sto.type
 HAVING SUM(tra.total) >= 200000
 ```
-
+Result:
+![alt text](Result7.JPG)
 ### Obstacles
 The problem encountered was some errors when running the following program in questions 5, 6, and 7:
 ```sql
@@ -107,6 +112,7 @@ COLUMN_NAME,
 DATA_TYPE
 FROM INFORMATION_SCHEMA.COLUMNS
 ```
+![alt text](DataType.JPG)
 In the "total" column in the transactions table, the data type is "int", so to eliminate errors this is done by changing the data type to "bigint"
 
 ```sql
