@@ -12,7 +12,7 @@ This project is derived from a mini-course by RevoU that discusses the SQL progr
 
 ## Data Sources
 The sources of this project consist of the Business Questions task file, product.csv, transactions.csv, store.csv, and customer.csv. These can be downloaded here :
-- [Store's Sales Dataset](https://www.example.com).
+- [Store's Sales Dataset](https://docs.google.com/document/d/1gGfwgjqfvXAEfvjddAw1UZEdPWClLWHkT0sRRI3xht0/edit).
  
 ## Tool 
 1. SQL --> Select Data from the tables that are needed and combine the required data from several tables then save the results in Excel
@@ -21,13 +21,15 @@ The sources of this project consist of the Business Questions task file, product
 ## Result
 Writing Query Using SQL Server Management Studio to answer business questions:
 1. How many female customers in Depok should we give promotions via email to for each type of email?
-- Here is the SQL code for the answer
 ```sql
 SELECT email, count(ID) AS total_customers
 FROM customer
 WHERE city = 'Depok' and gender = 'Female'
 GROUP BY email
 ```
+Result:
+![alt text](Result1.jpg)
+
 2. Provide 10 customer IDs with the largest total overall purchases.
 - Here is the SQL code for the answer
 ```sql
