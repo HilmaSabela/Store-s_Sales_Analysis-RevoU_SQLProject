@@ -1,0 +1,48 @@
+# Store's Sales Analysis
+
+## Table of Content 
+- [Project Overview](#project-overview)
+- [Data Sources](#data-sources)
+- [Result](#result)
+- [Obstacles](#obstacles)
+
+## Project Overview
+This project is derived from a mini-course by RevoU that discusses the SQL programming language. 
+There are datasets and business questions as tasks that will be answered using SQL programming language. 
+The dataset contains detailed information about a store consisting of transaction data, customers, stores, and product types. 
+The purpose of this project is not only to answer business questions from people who need to gain insights but also to analyze the store. 
+Analyzing using Tableau analysis tool software as an addition that I performed in this project.  
+
+## Data Sources
+The sources of this project are consist of Business Qiestions task file, product.csv, transactions.csv, store.csv, and customer.csv. that can be downloaded here :
+"link".
+ 
+## Tool 
+1. SQL --> Select Data from table that nedeed and combine the required data from several tables then save the results in Excel
+2. Tableau --> Analysze and Visualize
+
+## Result
+Writing Query Using SQL Server Management Studio to answer business questions:
+1. 
+
+Jabarkan hasil dari pertanyaan bisnis pakai code sama resultnya lewat gambar
+
+### Obstacles
+
+
+
+
+
+
+NOTE : Permasalahan dalam mengerjakan
+Hati-hati dengan data type
+Terjadi beberapa error seperti 
+"Arithmetic overflow error for data type tinyint, value = 74251"
+"Arithmetic overflow error converting expression to data type int"
+
+Setelah dicek, ternyata data type pada kolom 'total' adalah int, sehingga ketika dijumlahkan,
+hasil data terlalu besar.
+Oleh karena itum mengganti data type kolom 'total' dari int menjadi bigint
+
+ALTER TABLE transactions
+ALTER COLUMN total bigint  
