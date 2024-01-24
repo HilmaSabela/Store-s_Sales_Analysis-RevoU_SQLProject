@@ -28,7 +28,7 @@ WHERE city = 'Depok' and gender = 'Female'
 GROUP BY email
 ```
 Result:
-![alt text](Result1.JPG)
+- ![alt text](Result1.JPG)
 
 2. Provide 10 customer IDs with the largest total overall purchases.
 ```sql
@@ -39,7 +39,8 @@ GROUP by customer_id
 ORDER by total DESC
 ```
 Result:
-![alt text](Result2.JPG)
+- ![alt text](Result2.JPG)
+  
 3. How many products are there in the database that cost less than 1000?
 ```sql
 SELECT id, price
@@ -47,7 +48,8 @@ FROM product
 WHERE price < 1000
 ```
 Result:
-![alt text](Result3.JPG)
+- ![alt text](Result3.JPG)
+  
 4. Provide a list of the 5 most purchased product_ids
 ```sql
 SELECT TOP 5
@@ -58,7 +60,8 @@ GROUP BY product_id
 ORDER BY total_quantity DESC
 ```
 Result:
-![alt text](Result4.JPG)
+- ![alt text](Result4.JPG)
+  
 5. What are the number of transactions, revenue, and number of products sold on the platform monthly? Are the results increasing or not?
 ```sql
 SELECT DATEPART(Month, created_at) Month,
@@ -70,7 +73,8 @@ GROUP BY DATEPART(Month, created_at)
 ORDER BY DATEPART(Month, created_at) ASC
 ```
 Result:
-![alt text](Result5.JPG)
+- ![alt text](Result5.JPG)
+  
 6. Provide information on total spending and average spending from customers per city?
 ```sql
 SELECT cus.city,
@@ -82,7 +86,8 @@ LEFT JOIN customer as cus
 GROUP BY cus.city
 ```
 Result:
-![alt text](Result6.JPG)
+- ![alt text](Result6.JPG)
+  
 7. How many customers have a total expenditure of more than > 200,000? Please group them by store type
 ```sql
 SELECT sto.type,
@@ -94,7 +99,8 @@ GROUP BY sto.type
 HAVING SUM(tra.total) >= 200000
 ```
 Result:
-![alt text](Result7.JPG)
+- ![alt text](Result7.JPG)
+  
 ### Obstacles
 The problem encountered was some errors when running the following program in questions 5, 6, and 7:
 ```sql
@@ -112,9 +118,9 @@ COLUMN_NAME,
 DATA_TYPE
 FROM INFORMATION_SCHEMA.COLUMNS
 ```
-![alt text](DataType.JPG)
+- ![alt text](DataType.JPG)
+  
 In the "total" column in the transactions table, the data type is "int", so to eliminate errors this is done by changing the data type to "bigint"
-
 ```sql
 ALTER TABLE transactions
 ALTER COLUMN total bigint
